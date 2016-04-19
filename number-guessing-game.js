@@ -31,19 +31,18 @@ prompt.start();
 
 function guessingPrompt() {
     console.log("Guess # " + guessCount);
-   return prompt.get(['Guess'], function(err, result) {
-        // console.log(typeof parseInt(result.Guess));
-        // console.log(typeof theNumber);
-        // console.log("random number: " + theNumber + ", your guess: " + result.Guess);
-        
+    return prompt.get(['Guess'], function(err, result) {
+
         if (theNumber !== parseInt(result.Guess) && guessCount < 5) {
             console.log("Guess again");
             guessCount++;
             guessingPrompt()
-        } else if (theNumber ===parseInt(result.Guess)) {
+        }
+        else if (theNumber === parseInt(result.Guess)) {
             console.log("YOU win!")
             return;
-        } else {
+        }
+        else {
             console.log("SUCK")
         }
     });
